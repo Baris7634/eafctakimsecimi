@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC25 Takım Seçimi</title>
+
+    <!-- Favicon Ekleyin -->
+    <link rel="icon" href="images/fccc25.jpeg" type="image/x-icon"> <!-- favicon.ico dosyasını ekledik -->
+    
+    <!-- iOS için Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="images/fccc25.jpeg">
+
+    <!-- Android için Icon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="images/fccc25.jpeg">
+
+    <!-- Web App Manifest Dosyası -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Genel Stil dosyası -->
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #logo {
+            width: 180px; /* Logonun genişliğini ayarlayabilirsiniz */
+            height: auto; /* Yükseklik orantılı olarak ayarlanır */
+            display: block;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="team-selection">
+        <!-- Logo -->
+        <img src="images/eafcs25logo.png" alt="FC25 Logo" id="logo">
+
+        <!-- Lig Seçme Dropdown -->
+        <div class="league-select">
+            <label for="league-select">Lig Seçiniz:</label>
+            <select id="league-select" onchange="showTeams()">
+                <option value="">Lig Seçiniz</option>
+                <option value="premier-league">Premier League (İngiltere)</option>
+                <option value="bundesliga">Bundesliga (Almanya)</option>
+                <option value="serie-a">Serie A (İtalya)</option>
+                <option value="ligue-1">Ligue 1 (Fransa)</option>
+                <option value="eredivisie">Eredivisie (Hollanda)</option>
+                <option value="super-lig">Super Lig (Türkiye)</option>
+                <option value="laliga">La Liga (İspanya)</option>
+                <option value="liga-portugal">Liga Portugal (Portekiz)</option> <!-- Portekiz Ligi eklendi -->
+                <option value="champions-league">Şampiyonlar Ligi</option>
+                <option value="europa-league">Avrupa Ligi</option>
+            </select>
+            <!-- Rastgele Lig Seç butonu -->
+            <button id="random-league-btn" onclick="selectRandomLeague()">Rastgele Lig Seç</button>
+        </div>
+
+        <!-- Lig Detayları (Takımlar) -->
+        <div id="league-details"></div>
+
+        <!-- Takımlar kutucukları -->
+        <div class="teams-container">
+            <div class="team-box" id="team1">
+                <h2>Takım 1</h2>
+                <p id="selected-team1">Henüz Seçilmedi</p>
+            </div>
+
+            <div class="team-box" id="team2">
+                <h2>Takım 2</h2>
+                <p id="selected-team2">Henüz Seçilmedi</p>
+            </div>
+        </div>
+
+        <!-- Otomatik takım seçme butonu -->
+        <button id="auto-select-btn" onclick="autoSelectTeams()">Otomatik Takım Seç</button>
+    </div>
+
+    <!-- JavaScript dosyasına bağlantı -->
+    <script src="js/script.js"></script>  
+</body>
+</html>

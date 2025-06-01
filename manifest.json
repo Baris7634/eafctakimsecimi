@@ -1,0 +1,20 @@
+{
+    "name": "FC25 Takım Seçimi",
+    "short_name": "FC25 Takım Seçimi",
+    "icons": [
+      {
+        "src": "images/kafkassss.jpg",
+        "sizes": "192x192",
+        "type": "image/jpeg"
+      },
+      {
+        "src": "images/kafkassss.jpg",
+        "sizes": "512x512",
+        "type": "image/jpeg"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone"
+  }
+  
