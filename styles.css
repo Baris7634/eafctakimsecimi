@@ -1,0 +1,374 @@
+/* Genel sayfa ayarları */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/64806f585130a65b4edb8f0d/8fb00136-8d09-4532-a8c4-05b4dd7b2829/GWJRy-kWYAAOOhx.jfif?format=1000w'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff; /* Yazı rengi beyaz olacak */
+    overflow: hidden; /* Taşmaları gizler */
+    transition: background-color 0.5s ease; /* Duyarlı animasyon */
+}
+
+/* Başlık stil */
+h1 {
+    font-size: 48px;
+    color: #fff; /* Başlık rengi beyaz */
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6); /* Başlığa güçlü gölge efekti */
+    display: flex;
+    align-items: center; /* Logo ve başlık metnini hizalamak için */
+    justify-content: center;
+    gap: 10px; /* Logo ile başlık arasına boşluk eklemek için */
+    text-transform: uppercase;
+}
+
+/* Logo stilini düzenlemek */
+h1 .logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Genel konteyner ayarları */
+.team-selection {
+    background-color: rgba(37, 33, 33, 0.7); /* Arka planı şeffaf yapıyoruz */
+    padding: 300px 120px;
+    border-radius: 15px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4); /* Hafif gölge */
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-in-out; /* Sayfa yüklendiğinde animasyon */
+}
+
+/* Takım kutucukları */
+.teams-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* Takım kutucuk stili */
+.team-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    width: 270px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Daha hızlı geçiş */
+}
+
+/* Hover efekti */
+.team-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Hoverda hafif gölge */
+}
+
+/* Takım adı ve yazı rengi */
+.team-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Takım açıklaması stili */
+.team-box p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #777;
+}
+
+/* Buton stil */
+#auto-select-btn {
+    padding: 15px 30px;
+    font-size: 22px;
+    background-color: #ff5722; /* Mercan turuncu */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+    margin-top: -95px;
+    text-transform: uppercase;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+/* Buton hover efekti */
+#auto-select-btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* Responsive tasarım */
+@media screen and (max-width: 768px) {
+    .teams-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-box {
+        width: 60%;
+        margin-bottom: 25px;
+    }
+
+    #auto-select-btn {
+      
+        padding: 15px;
+        font-size: 20px;
+    }
+}
+
+/* Lig Seçme Dropdown */
+.league-select {
+    margin-bottom: 30px;
+    text-align: left;
+    position: relative;
+}
+
+.league-select label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Dropdown Menüsü */
+.league-select select {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    color: #333;
+    outline: none;
+    appearance: none;
+}
+
+/* Focus efekti */
+.league-select select:focus {
+    border-color: #ff5722;
+    background-color: rgba(255, 255, 255, 1); /* Odaklanıldığında beyaz */
+}
+
+/* Dropdown ok işareti */
+.league-select::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 35%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #ff5722;
+    pointer-events: none;
+}
+
+/* Option stilini iyileştirme */
+.league-select select option {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Hover ve Seçilen Option Efekti */
+.league-select select option:hover {
+    background-color: #f1f1f1;
+}
+
+.league-select select option:checked {
+    background-color: #ff5722;
+    color: #fff;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Rastgele Lig Seç butonunun stili */
+#random-league-btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #4CAF50; /* Yeşil renk */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px; /* Dropdown ile buton arasında boşluk */
+}
+
+/* Hover efekti */
+#random-league-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Team Selection Container */
+.team-selection {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Lig Seçme Dropdown */
+.league-select {
+    margin-bottom: 20px;
+}
+
+.league-select label {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.league-select select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Butonlar */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Takımlar Container */
+.teams-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.team-box {
+    width: 48%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.team-box h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.team-box p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Medya Sorguları (Responsive Design) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .team-selection {
+        width: 100%;
+        padding: 100px 30px;
+    }
+
+    .league-select {
+        margin-bottom: 15px;
+    }
+
+    .league-select select {
+        font-size: 1em;
+    }
+
+    .teams-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .league-select label {
+        font-size: 0.8em;
+    }
+
+    .league-select select {
+        font-size: 0.9em;
+    }
+
+    .team-box h2 {
+        font-size: 1.1em;
+    }
+
+    .team-box p {
+        font-size: 1.4em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
